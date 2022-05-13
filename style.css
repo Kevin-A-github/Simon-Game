@@ -26,16 +26,20 @@ h1 {
 
 #block1 {
   background-color: #f25022;
+  box-shadow: 5px 10px 5px gray;
 }
 
 #block2 {
   background-color: #7fba00;
+  box-shadow: 5px 10px 5px gray;
 }
 
 #block3 {
   background-color: #ffb900;
+  box-shadow: 5px 10px 5px gray;
 }
 
 #block4 {
   background-color: #00a4ef;
+  box-shadow: 5px 10px 5px gray;
 }
