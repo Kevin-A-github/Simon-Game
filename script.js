@@ -4,6 +4,10 @@ const redSquare = document.querySelector('#red');
 const greenSquare = document.querySelector('#green');
 const yellowSquare = document.querySelector('#yellow');
 const blueSquare = document.querySelector('#blue');
+let level = document.querySelector('.showLevel');
+console.log(level);
+
+let levels = 0;
 
 //////////////////////////////////////////////////////////////
 
@@ -45,11 +49,14 @@ const buttonClicked = buttonClicked => {
     if (userToGuess.length === 0) {
       ///// Start new sequence
       sequence.push(randomButtons());
+      inrcrementLevel();
       userToGuess = [...sequence];
       startFlashing();
     }
   } else {
     /////// End game
+
+    level.innerText = '1';
     startFlashing();
     alert('Game Over');
   }
@@ -66,3 +73,12 @@ const startFlashing = async () => {
   canClick = true;
 };
 startFlashing();
+
+const inrcrementLevel = () => {
+  levels++;
+  level.innerText = levels;
+};
+
+const sound = () => {
+  let audio = new Audio();
+};
