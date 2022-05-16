@@ -22,7 +22,7 @@ h2 {
 }
 
 .grid {
-  border: solid black 1px;
+  border: solid black 2px;
   height: 200px;
   width: 200px;
   background-color: white;
@@ -31,22 +31,22 @@ h2 {
 }
 
 #red {
-  background-color: #f25022;
+  background-color: red;
   box-shadow: 5px 10px 5px gray;
 }
 
 #green {
-  background-color: #7fba00;
+  background-color: green;
   box-shadow: 5px 10px 5px gray;
 }
 
 #yellow {
-  background-color: #ffb900;
+  background-color: yellow;
   box-shadow: 5px 10px 5px gray;
 }
 
 #blue {
-  background-color: #00a4ef;
+  background-color: blue;
   box-shadow: 5px 10px 5px gray;
 }
 

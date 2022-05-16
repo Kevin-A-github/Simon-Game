@@ -4,7 +4,6 @@ const redSquare = document.querySelector('#red');
 const greenSquare = document.querySelector('#green');
 const yellowSquare = document.querySelector('#yellow');
 const blueSquare = document.querySelector('#blue');
-const startButton = document.querySelector('#start');
 
 //////////////////////////////////////////////////////////////
 
@@ -21,7 +20,7 @@ let userToGuess = [...sequence];
 
 /////////////////  Function for button animation /////////////////
 const flicker = button => {
-  return new Promise((resolve, reject) => {
+  return new Promise(resolve => {
     /// Add css class
     button.className += 'active';
     setTimeout(() => {
@@ -38,15 +37,27 @@ const flicker = button => {
 
 let canClick = false;
 
-const buttonClicked = button => {
+const buttonClicked = buttonClicked => {
   if (!canClick) return;
-  ////// Remove first element from the array ///////.
+  ////// Remove first element from the array and return ot to user. ///////
   const correctButton = userToGuess.shift();
+  if (correctButton === buttonClicked) {
+    if (userToGuess.length === 0) {
+      ///// Start new sequence
+      sequence.push(randomButtons());
+      userToGuess = [...sequence];
+      startFlashing();
+    }
+  } else {
+    /////// End game
+    startFlashing();
+    alert('Game Over');
+  }
 };
 
 ///////////////// Function For The random Sequence(game runs) /////////////////
-
-const gameSequence = async () => {
+const startFlashing = async () => {
+  canClick = false;
   for (const button of sequence) {
     /// Awaits the callBack for the flicker function.
     await flicker(button);
@@ -54,4 +65,4 @@ const gameSequence = async () => {
   //// Unti call back is done user can't click.
   canClick = true;
 };
-gameSequence();
+startFlashing();
