@@ -14,17 +14,35 @@
   </head>
   <body>
     <h1>Simon Game</h1>
+    <h2>Level 0</h2>
 
     <div class="gameboard" id="gameboardID">
-      <div class="grid" id="red"></div>
+      <div
+        onclick="buttonClicked(event.currentTarget)"
+        class="grid"
+        id="red"
+      ></div>
 
-      <div class="grid" id="green"></div>
+      <div
+        onclick="buttonClicked(event.currentTarget)"
+        class="grid"
+        id="green"
+      ></div>
 
-      <div class="grid" id="yellow"></div>
+      <div
+        onclick="buttonClicked(event.currentTarget)"
+        class="grid"
+        id="yellow"
+      ></div>
 
-      <div class="grid" id="blue"></div>
+      <div
+        onclick="buttonClicked(event.currentTarget)"
+        class="grid"
+        id="blue"
+      ></div>
     </div>
 
+    <button id="start">Start</button>
     <script src="script.js" async defer></script>
   </body>
 </html>

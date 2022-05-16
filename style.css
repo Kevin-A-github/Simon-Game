@@ -7,6 +7,11 @@ h1 {
   font-family: 'Open Sans', sans-serif;
 }
 
+h2 {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
 /* CLASSES */
 .gameboard {
   display: grid;
@@ -43,4 +48,12 @@ h1 {
 #blue {
   background-color: #00a4ef;
   box-shadow: 5px 10px 5px gray;
+}
+
+#start {
+  justify-content: center;
+}
+
+.active {
+  background-color: black;
 }

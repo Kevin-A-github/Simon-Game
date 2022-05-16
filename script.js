@@ -1,30 +1,57 @@
 ////////  /HTML Selectors ///////////////////////
 
 const redSquare = document.querySelector('#red');
-const redGreen = document.querySelector('#green');
-const redYellow = document.querySelector('#yellow');
-const redBlue = document.querySelector('#blue');
-const buttons = document.querySelectorAll('.grid');
+const greenSquare = document.querySelector('#green');
+const yellowSquare = document.querySelector('#yellow');
+const blueSquare = document.querySelector('#blue');
+const startButton = document.querySelector('#start');
 
 //////////////////////////////////////////////////////////////
 
-let buttonColors = ['red', 'green', 'yellow', 'blue'];
-let sequence = [];
-let userSequence = [];
+/// function to return a random buttons fomr 0-3.
+const randomButtons = () => {
+  const buttons = [redSquare, greenSquare, yellowSquare, blueSquare];
 
-const clickedButton = () => {
-  buttons.forEach(button => {
-    button.addEventListener('click', e => {
-      userSequence.push(button);
-      console.log(userSequence);
-    });
+  return buttons[parseInt(Math.random() * buttons.length)];
+};
+
+const sequence = [randomButtons()];
+////// Clone of sequence.
+let userToGuess = [...sequence];
+
+/////////////////  Function for button animation /////////////////
+const flicker = button => {
+  return new Promise((resolve, reject) => {
+    /// Add css class
+    button.className += 'active';
+    setTimeout(() => {
+      /// removes class.
+      button.className = button.className.replace('active', '');
+      setTimeout(() => {
+        resolve();
+      }, 250);
+    }, 1000);
   });
 };
-clickedButton();
 
-/////////////// Returns random color ////////////
-const nextSequence = () => {
-  let randomNum = Math.floor(Math.random() * 4);
-  sequence.push(buttonColors[randomNum]);
+///////////////// Function for clicking buttons /////////////////
+
+let canClick = false;
+
+const buttonClicked = button => {
+  if (!canClick) return;
+  ////// Remove first element from the array ///////.
+  const correctButton = userToGuess.shift();
 };
-nextSequence();
+
+///////////////// Function For The random Sequence(game runs) /////////////////
+
+const gameSequence = async () => {
+  for (const button of sequence) {
+    /// Awaits the callBack for the flicker function.
+    await flicker(button);
+  }
+  //// Unti call back is done user can't click.
+  canClick = true;
+};
+gameSequence();
