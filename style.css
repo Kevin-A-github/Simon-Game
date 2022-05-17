@@ -10,6 +10,7 @@ h1 {
 h2 {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  font-size: 40px;
 }
 
 /* CLASSES */
@@ -19,10 +20,11 @@ h2 {
   grid-template-rows: 220px 220px;
   justify-content: center;
   padding-top: 100px;
+  padding-bottom: 40px;
 }
 
 .grid {
-  border: solid black 2px;
+  border: solid black 3px;
   height: 200px;
   width: 200px;
   background-color: white;
@@ -32,22 +34,22 @@ h2 {
 
 #red {
   background-color: red;
-  box-shadow: 5px 10px 5px gray;
+  box-shadow: 5px 10px 5px rgb(224, 88, 88);
 }
 
 #green {
   background-color: green;
-  box-shadow: 5px 10px 5px gray;
+  box-shadow: 5px 10px 5px rgb(115, 218, 97);
 }
 
 #yellow {
   background-color: yellow;
-  box-shadow: 5px 10px 5px gray;
+  box-shadow: 5px 10px 5px rgb(229, 226, 51);
 }
 
 #blue {
   background-color: blue;
-  box-shadow: 5px 10px 5px gray;
+  box-shadow: 5px 10px 5px rgb(31, 162, 223);
 }
 
 #start {
