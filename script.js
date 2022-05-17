@@ -60,14 +60,13 @@ const buttonClicked = buttonClicked => {
   } else {
     /////// End game
     gameOver.innerText = 'GAME OVER';
-
+    let audio = new Audio(`./sounds/wrong.mp3`);
+    audio.play();
     setTimeout(() => {
       gameOver.innerText = '';
-      level.innerText = '1';
       reset();
+      levels = 0;
       startFlashing();
-      let audio = new Audio(`./sounds/wrong.mp3`);
-      audio.play();
     }, 1000);
   }
 };
