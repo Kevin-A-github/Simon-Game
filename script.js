@@ -9,6 +9,8 @@ const gameOver = document.querySelector('.gameOver');
 let level = document.querySelector('.showLevel');
 
 let levels = 0;
+let score = 0;
+let highScore = localStorage.getItem('highscore');
 
 //////////////////////////////////////////////////////////////
 
@@ -36,7 +38,7 @@ const flicker = button => {
       setTimeout(() => {
         resolve();
       }, 250);
-    }, 1000);
+    }, 700);
   });
 };
 
