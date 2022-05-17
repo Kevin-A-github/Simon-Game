@@ -57,3 +57,7 @@ h2 {
 .active {
   background-color: black;
 }
+
+.gameOver {
+  text-align: center;
+}

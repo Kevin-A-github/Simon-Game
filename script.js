@@ -1,11 +1,12 @@
+'use strict';
 ////////  /HTML Selectors ///////////////////////
 
 const redSquare = document.querySelector('#red');
 const greenSquare = document.querySelector('#green');
 const yellowSquare = document.querySelector('#yellow');
 const blueSquare = document.querySelector('#blue');
+const gameOver = document.querySelector('.gameOver');
 let level = document.querySelector('.showLevel');
-console.log(level);
 
 let levels = 0;
 
@@ -18,8 +19,9 @@ const randomButtons = () => {
   return buttons[parseInt(Math.random() * buttons.length)];
 };
 
-const sequence = [randomButtons()];
-////// Clone of sequence.
+let sequence = [randomButtons()];
+
+////// Clone of  random sequence.
 let userToGuess = [...sequence];
 
 /////////////////  Function for button animation /////////////////
@@ -48,6 +50,8 @@ const buttonClicked = buttonClicked => {
   if (correctButton === buttonClicked) {
     if (userToGuess.length === 0) {
       ///// Start new sequence
+      let audio = new Audio(`./sounds/${buttonClicked.id}.mp3`);
+      audio.play();
       sequence.push(randomButtons());
       inrcrementLevel();
       userToGuess = [...sequence];
@@ -55,11 +59,23 @@ const buttonClicked = buttonClicked => {
     }
   } else {
     /////// End game
+    gameOver.innerText = 'GAME OVER';
 
-    level.innerText = '1';
-    startFlashing();
-    alert('Game Over');
+    setTimeout(() => {
+      gameOver.innerText = '';
+      level.innerText = '1';
+      reset();
+      startFlashing();
+      let audio = new Audio(`./sounds/wrong.mp3`);
+      audio.play();
+    }, 1000);
   }
+};
+
+const reset = () => {
+  sequence = [randomButtons()];
+  userToGuess = [...sequence];
+  level.innerText = 0;
 };
 
 ///////////////// Function For The random Sequence(game runs) /////////////////
@@ -77,8 +93,4 @@ startFlashing();
 const inrcrementLevel = () => {
   levels++;
   level.innerText = levels;
-};
-
-const sound = () => {
-  let audio = new Audio();
 };
