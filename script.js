@@ -15,8 +15,9 @@ let levels = 0;
 /// function to return a random buttons fomr 0-3.
 const randomButtons = () => {
   const buttons = [redSquare, greenSquare, yellowSquare, blueSquare];
-
-  return buttons[parseInt(Math.random() * buttons.length)];
+  let ranNum = parseInt(Math.random() * buttons.length);
+  console.log(ranNum);
+  return buttons[ranNum];
 };
 
 let sequence = [randomButtons()];
@@ -84,7 +85,7 @@ const startFlashing = async () => {
     /// Awaits the callBack for the flicker function.
     await flicker(button);
   }
-  //// Unti call back is done user can't click.
+  //// Until call back is done user can't click.
   canClick = true;
 };
 startFlashing();
