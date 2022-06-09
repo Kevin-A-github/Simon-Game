@@ -1,4 +1,4 @@
-# Simon-Game
+Breaking Bad Fan site
 
 Screen shot of game.
 <img width="1423" alt="Screen Shot 2022-05-19 at 9 04 38 AM" src="https://user-images.githubusercontent.com/47561235/169300248-bca44812-cb16-4193-8f5f-39025aa2b0f5.png">
@@ -16,4 +16,7 @@ Wireframe I was trying to achieve.
 No unsolved problems I can find as of right now. Hurdles I had to overcome was a bug in the game over logic and the reset function of the game.
 
 live version of the game.
-https://famous-griffin-c87240.netlify.app/
+[https://famous-griffin-c87240.netlify.app/](https://cosmic-madeleine-0f596a.netlify.app/)
+
+
+Creadit to https://www.youtube.com/c/TraversyMedia for the tutorial.
