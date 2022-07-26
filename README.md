@@ -18,5 +18,3 @@ No unsolved problems I can find as of right now. Hurdles I had to overcome was a
 live version of the game.
 [https://famous-griffin-c87240.netlify.app/](https://cosmic-madeleine-0f596a.netlify.app/)
 
-
-Creadit to https://www.youtube.com/c/TraversyMedia for the tutorial.
